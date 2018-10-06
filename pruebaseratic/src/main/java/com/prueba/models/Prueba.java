@@ -12,7 +12,8 @@ package com.prueba.models;
 public class Prueba {
     int id;
     String cedulaAs, nombreA, carreraA, cedulaE, nombreE, detalle, calificacion, fecha;
-
+    
+    
     public Prueba() {
     }
 
