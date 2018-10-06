@@ -6,6 +6,7 @@
 package com.prueba.controller.web.prueba;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,7 +21,15 @@ public class HomePruebaController {
     
     public ModelAndView homePrueba(HttpServletRequest hsr) 
     {
-     return new ModelAndView ();
-    }
-}
+       HttpSession session = hsr.getSession();
+       String sesion = (String)session.getAttribute("session");
+       
+       if (sesion == "si"){ 
+            return new ModelAndView ();
+         }
+       else{
+           return new ModelAndView("redirect:/login.htm");
+       }
+    }   
+   }
 

@@ -38,14 +38,14 @@ public class AddUserController {
     public ModelAndView adduser(HttpServletRequest hsr){   
         HttpSession session = hsr.getSession();
         String sesion = (String)session.getAttribute("session");
-       // if (sesion == "si"){
+       if (sesion == "si"){
             ModelAndView mav = new ModelAndView();
             mav.setViewName("usuario/adduser");
             mav.addObject("usuario", new Usuario());       
             return mav;   
-       //} else {
-          //  return new ModelAndView("redirect:/login.htm");  
-       //}                   
+       } else {
+            return new ModelAndView("redirect:/login.htm");  
+       }                   
     }
     
     @PostMapping

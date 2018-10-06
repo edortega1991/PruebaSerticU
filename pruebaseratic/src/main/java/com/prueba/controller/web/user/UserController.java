@@ -32,15 +32,15 @@ public class UserController {
         
         HttpSession session = hsr.getSession();
         String sesion = (String)session.getAttribute("session");
-        //if (sesion == "si"){
+        if (sesion == "si"){
             ModelAndView mav = new ModelAndView();
             String sql="select * from usuario";
             List usuarios = this.jdbcTemplate.queryForList(sql);
             mav.addObject("usuarios", usuarios);
             mav.setViewName("usuario/user");
             return mav;  
-       }// else {
-          //  return new ModelAndView("redirect:/login.htm");  
-       //}                             
+       } else {
+            return new ModelAndView("redirect:/login.htm");  
+       }                             
     }
-//}
+}

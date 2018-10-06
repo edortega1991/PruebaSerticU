@@ -47,7 +47,7 @@ public class LoginAspiranteController {
         
         if(sesion == "si")
         {
-         return new ModelAndView("redirect:/user.htm");
+         return new ModelAndView("redirect:/listPruebaAsp.htm");
         }
         else{
            
@@ -65,11 +65,11 @@ public class LoginAspiranteController {
                                 SessionStatus status,HttpServletRequest hsr){         
         HttpSession session = hsr.getSession();
         //String pass = Validar.Encriptar(a.getClave());
-        String sql="SELECT * FROM aspirante WHERE correo='"+a.getCorreo()+"' AND nombre='"+a.getNombre()+"'";
+        String sql="SELECT * FROM aspirante WHERE correo='"+a.getCorreo()+"' AND cedula='"+a.getCedula()+"'";
         List datos = this.jdbctemplate.queryForList(sql);
         if (datos.size() > 0){            
             session.setAttribute("session", "si");
-            return new ModelAndView("redirect:/user.htm");            
+            return new ModelAndView("redirect:/listPruebaAsp.htm");            
         }else{
             return new ModelAndView("redirect:/loginAspirante.htm");
         }                              

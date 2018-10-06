@@ -34,16 +34,16 @@ public class AspiranteController {
         
         HttpSession session = hsr.getSession();
         String sesion = (String)session.getAttribute("session");
-        //if (sesion == "si"){
+        if (sesion == "si"){
             ModelAndView mav = new ModelAndView();
             String sql="select * from aspirante";
             List aspirantes = this.jdbcTemplate.queryForList(sql);
             mav.addObject("aspirantes", aspirantes);
             mav.setViewName("aspirante/aspirante");
             return mav;  
-       }// else {
-          //  return new ModelAndView("redirect:/login.htm");  
-       //}                             
+       } else {
+            return new ModelAndView("redirect:/login.htm");  
+       }                             
     }
-//}    
+}    
 //}

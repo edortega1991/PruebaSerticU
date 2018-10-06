@@ -43,7 +43,7 @@ public class EditUserController {
         HttpSession session = request.getSession();
         String sesion = (String)session.getAttribute("session");
         
-       // if (sesion == "si"){
+        if (sesion == "si"){
             ModelAndView mav = new ModelAndView();
             String id=request.getParameter("id");
             Usuario datos = this.selectUser(id);
@@ -51,12 +51,12 @@ public class EditUserController {
             mav.setViewName("usuario/edituser");
             mav.addObject("usuario",new Usuario(id,datos.getNombre(),datos.getUsuario(),desencriptado,datos.getTipo(),datos.getFecha()));
             return mav;  
-       }// else {
-          //  return new ModelAndView("redirect:/login.htm");  
-      // }    
+       } else {
+            return new ModelAndView("redirect:/login.htm");  
+       }    
         
         
-    //}
+    }
     
     @PostMapping
     public ModelAndView edituser(@ModelAttribute("usuario") Usuario u,

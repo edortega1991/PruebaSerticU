@@ -43,7 +43,7 @@ public class EditAspiranteController {
         HttpSession session = request.getSession();
         String sesion = (String)session.getAttribute("session");
         
-       // if (sesion == "si"){
+        if (sesion == "si"){
             ModelAndView mav = new ModelAndView();
             String id=request.getParameter("id");
             Aspirante datos = this.selectAspirante(id);
@@ -51,12 +51,12 @@ public class EditAspiranteController {
             mav.setViewName("aspirante/editaspirante");
             mav.addObject("aspirante",new Aspirante(id,datos.getNombre(),datos.getCarrera(),datos.getTelefono(),datos.getCorreo()));
             return mav;  
-       }// else {
-          //  return new ModelAndView("redirect:/login.htm");  
-      // }    
+       } else {
+            return new ModelAndView("redirect:/login.htm");  
+       }    
         
         
-    //}
+    }
     
     @PostMapping
     public ModelAndView EditAspirante(@ModelAttribute("aspirante") Aspirante a,

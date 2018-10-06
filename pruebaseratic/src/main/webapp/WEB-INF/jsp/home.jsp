@@ -64,7 +64,7 @@
                             <p>Toda la información hacerca de los Aspirantes, tambien agregar editar o eliminar.</p>
                           </div>
                           <div class="card-action">
-                            <a href="player.htm">Aspirantes</a>
+                            <a href="aspirante.htm">Aspirantes</a>
                           </div>
                         </div>
                       </div>
@@ -79,7 +79,7 @@
                             <p>Toda la información hacerca de las pruebas, tambien agregar editar o eliminar.</p>
                           </div>
                           <div class="card-action">
-                            <a href="citas.htm">Pruebas</a>
+                            <a href="listarP.htm">Pruebas</a>
                           </div>
                         </div>
                       </div>       

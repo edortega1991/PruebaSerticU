@@ -47,7 +47,7 @@
                             <p>En esta seccion puede acceder a la creacion de las pruebas.</p>
                           </div>
                           <div class="card-action">
-                            <a href="user.htm">Crear Prueba</a>
+                            <a href="addprueba.htm">Crear Prueba</a>
                           </div>
                         </div>
                     </div>

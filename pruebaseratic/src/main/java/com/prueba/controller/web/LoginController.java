@@ -65,12 +65,25 @@ public class LoginController {
         HttpSession session = hsr.getSession();
         String pass = Validar.Encriptar(u.getClave());
         String sql="SELECT * FROM usuario WHERE usuario='"+u.getUsuario()+"' AND clave='"+pass+"'";
-        List datos = this.jdbctemplate.queryForList(sql);
-        if (datos.size() > 0){            
+        //List datos = this.jdbctemplate.queryForList(sql);
+        List<Map<String, Object>> datos = this.jdbctemplate.queryForList(sql);
+        if (datos.size() > 0){ 
+            for (Map<String, Object> dato : datos) {
+		String tipo = (String) dato.get("tipo");
+                if(tipo.contentEquals("administrador")){
+                    session.setAttribute("session", "si");
+                    return new ModelAndView("redirect:/home.htm");            
+                }
+                else{
+                    session.setAttribute("session", "si");
+                    return new ModelAndView("redirect:/homePrueba.htm");            
+                }
+            }
             session.setAttribute("session", "si");
             return new ModelAndView("redirect:/home.htm");            
-        }else{
+        }
+        else{
             return new ModelAndView("redirect:/login.htm");
         }                              
-        }       
+        }
 }

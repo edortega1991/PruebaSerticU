@@ -41,14 +41,14 @@ public class AddPruebaController {
     public ModelAndView addprueba(HttpServletRequest hsr){   
         HttpSession session = hsr.getSession();
         String sesion = (String)session.getAttribute("session");
-       // if (sesion == "si"){
+        if (sesion == "si"){
             ModelAndView mav = new ModelAndView();
             mav.setViewName("prueba/addprueba");
             mav.addObject("prueba", new Prueba());       
             return mav;   
-       //} else {
-          //  return new ModelAndView("redirect:/login.htm");  
-       //}                   
+       } else {
+            return new ModelAndView("redirect:/login.htm");  
+       }                   
     }
     
     @PostMapping

@@ -1,6 +1,3 @@
-<link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -35,56 +32,17 @@
      <div class="had-container logueo ">
       <!--<div class="parallax"><img src="https://alistapart.com/d/438/fig-6--background-blend-mode.jpg"></div>-->
       	<div class="row"><br>
-      		<div class="col m4 s12 offset-m1 offset-s2">
-      			<h4 class="truncate bg-card-user">
-      				<!--<img src="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png" alt="" class="circle responsive-img">-->
-					 <div class="row login">
-                                              <h4>
-                                                  
-                                                  <span class="blue-grey-text"> Iniciar sesión Usuario</span>
-                                                  
-                                              </h4>
-                                              <form name="form" disabled>  <!--class="col s12">-->
-					      <div class="row">
-					         <div class="input-field col m12 s12">
-					          <i class="large material-icons iconis prefix">account_box</i>
-                                                    <label for="icon_prefix" path="usuario">User:</label>
-                                                    <input id="icon_prefix" type="text" class="validate" required="true" aria-required="true" path="usuario" disabled/>
-					          </div>
-					      </div>
-					      <div class="row">
-					        <div class="input-field col m12 s12">
-					          <i class="material-icons iconis prefix">enhanced_encryption</i>
-                                                  <label for="icon_prefix1" path="clave" >Contraseña::</label>
-                                                  <input id="icon_prefix1" type="pass" class="validate" required="true" aria-required="true" path="clave" disabled/>
-                                                  
-                                                </div>
-					      </div>
-					      <div class="row">
-					      	<button type="submit" value="Enviar" name="submit" class='col s12 btn btn-large waves-effect indigo' disabled>Login</button> 
-					      </div>
-					    </form>
-					  </div>
-      			</h4>
-		   	  </div>
-	    <!--	</div>
-	    </div>
-            
-       <!-- <div class="had-container logueo ">
-      <!--<div class="parallax"><img src="https://alistapart.com/d/438/fig-6--background-blend-mode.jpg"></div>-->
-      	<!--<div class="row"><br>-->
+      		
       		<div class="col m4 s12 offset-m2 offset-s2">
       			<h4 class="truncate bg-card-user">
-      				<!--<img src="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png" alt="" class="circle responsive-img">-->
-					 
-                                
+      				                              
                                         <div class="row login">
                                               <h4>
                                                   
                                                   <span class="blue-grey-text"> Iniciar sesión Aspirante</span>
                                                   
                                               </h4>
-                                              <form:form method="post" modelAttribute="aspirante">  <!--class="col s12">-->
+                                              <form:form method="post" modelAttribute="aspirante" >  <!--class="col s12">-->
 					      <div class="row">
 					         <div class="input-field col m12 s12">
 					          <i class="large material-icons iconis prefix">account_box</i>
@@ -95,8 +53,8 @@
 					      <div class="row">
 					        <div class="input-field col m12 s12">
 					          <i class="material-icons iconis prefix">enhanced_encryption</i>
-                                                  <form:label for="icon_prefix" path="nombre">Nombre:</form:label>
-                                                  <form:input id="icon_prefix" type="text" class="validate" required="true" aria-required="true" path="nombre" />
+                                                  <form:label for="icon_prefix" path="cedula" name="cedula1">Cedula:</form:label>
+                                                  <form:input id="icon_prefix" type="text" class="validate" required="true" aria-required="true" path="cedula" name="cedula1" />
                                                   
                                                 </div>
 					      </div>
